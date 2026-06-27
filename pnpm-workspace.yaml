@@ -1,0 +1,11 @@
+onlyBuiltDependencies:
+  - '@nestjs/core'
+  - '@prisma/engines'
+  - prisma
+  - unrs-resolver
+
+ignoredBuiltDependencies:
+  - '@scarf/scarf'
+
+overrides:
+  fastify: 5.8.5

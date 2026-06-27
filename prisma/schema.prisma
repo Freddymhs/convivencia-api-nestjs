@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/// Modelo de ejemplo para demostrar el patron CRUD.
+/// Reemplazar o eliminar al implementar dominios reales.
+model Example {
+  id          String   @id @default(uuid())
+  name        String
+  description String?
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("examples")
+}

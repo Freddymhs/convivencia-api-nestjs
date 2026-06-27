@@ -1,0 +1,11 @@
+export const ENV_KEYS = {
+  NODE_ENV: 'NODE_ENV',
+  PORT: 'PORT',
+  DATABASE_URL: 'DATABASE_URL',
+  CORS_ORIGINS: 'CORS_ORIGINS',
+  PINO_LOG_LEVEL: 'PINO_LOG_LEVEL',
+  THROTTLE_TTL: 'THROTTLE_TTL',
+  THROTTLE_LIMIT: 'THROTTLE_LIMIT',
+} as const;
+
+export type EnvKey = (typeof ENV_KEYS)[keyof typeof ENV_KEYS];

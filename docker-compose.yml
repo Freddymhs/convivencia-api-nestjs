@@ -1,0 +1,40 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - DATABASE_URL=postgresql://template_nest:template_nest@postgres:5432/template_nest?schema=public
+      - CORS_ORIGINS=http://localhost:3001
+      - PINO_LOG_LEVEL=info
+      - THROTTLE_TTL=60
+      - THROTTLE_LIMIT=100
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./src:/app/src
+    command: pnpm dev
+
+  postgres:
+    image: postgres:16-alpine
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: template_nest
+      POSTGRES_PASSWORD: template_nest
+      POSTGRES_DB: template_nest
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U template_nest']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgdata:
