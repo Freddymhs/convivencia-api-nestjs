@@ -1,3 +1,10 @@
+# Concepto Inicial del Proyecto
+
+> Documento de origen — no editar. Refleja la idea original con la que se generó el backlog.
+> Fecha: 2026-07-15
+
+---
+
 # Convivencia — Concepto
 
 ## Propósito
@@ -8,11 +15,11 @@ Ayudar a mantener una **convivencia saludable en viviendas compartidas** mediant
 
 ## Qué es / qué no es
 
-| Concepto                            | Ejemplo                              | ¿Genera recordatorio?                                                                     |
-| ----------------------------------- | ------------------------------------ | ----------------------------------------------------------------------------------------- |
-| **Regla** (inmediata)               | "si usás la cocina, limpiala"        | ❌ NO — es referencia/onboarding. No agendable. Sería presión excesiva.                   |
-| **Tarea periódica**                 | "limpieza profunda baño cada 7 días" | ✅ SÍ — disparable por tiempo → WhatsApp                                                  |
-| ~~Mantenimiento~~ (comprar insumos) | "comprar cloro"                      | ❌ Descartado — trackear consumo = scope creep no confiable. Cada uno maneja sus insumos. |
+| Concepto                            | Ejemplo                                                                                               | ¿Genera recordatorio?                                                                     |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| **Regla** (inmediata)               | "si usás la cocina, limpiala"                                                                         | ❌ NO — es referencia/onboarding. No agendable. Sería presión excesiva.                   |
+| **Tarea periódica**                 | "limpieza profunda baño cada 7 días", "sacar basura martes/viernes", "limpieza rotativa por resident" | ✅ SÍ — disparable por tiempo → WhatsApp                                                  |
+| ~~Mantenimiento~~ (comprar insumos) | "comprar cloro"                                                                                       | ❌ Descartado — trackear consumo = scope creep no confiable. Cada uno maneja sus insumos. |
 
 **Split limpio del sistema**: `Rules` (referencia estática, se muestran) vs `Tasks` (agendadas, generan ping WhatsApp). El motor de recordatorios SOLO conoce tareas periódicas.
 

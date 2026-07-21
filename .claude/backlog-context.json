@@ -1,0 +1,17 @@
+{
+  "framework": "NestJS 11 (Fastify)",
+  "modules": "Feature modules por dominio (house, zone, resource, rule, task, resident)",
+  "layers": "Controller -> Service -> Repository -> Prisma (3 capas + patrones nombrados)",
+  "database": "Prisma 7 + PostgreSQL 16 (adapter PrismaPg)",
+  "validation": "class-validator + class-transformer (DTOs) + Joi (env, fail-fast)",
+  "auth": "F1: ninguno (role field sembrado, sin login) -> F3: Google OAuth + RLS enforcement",
+  "design_patterns": "Strategy (motor recurrencia) - Repository - Factory - DI",
+  "security": "Helmet + CORS + @nestjs/throttler (activos) - RLS Postgres (F2, policies en migraciones Prisma + SET app.current_resident por request)",
+  "secrets": ".env + Joi validation, sin manager externo",
+  "resilience": "Graceful DB degradation (health check ya existe) - sin circuit breaker",
+  "testing": "Unit (Jest) + Integration/E2E (Jest+Supertest)",
+  "deployment": "Docker multi-arch, self-hosted Mac Mini M1 (Hermes)",
+  "observability": "Pino (ya) -> Sentry (F1) -> OTel+Prometheus+Grafana (F2)",
+  "external_services": "BullMQ+Redis (cola recordatorios) - Sentry - Telegram/Twilio-sandbox (F1 ping) - WhatsApp Meta Cloud API (F2/F3) - Google OAuth (F3)",
+  "special": "Background jobs (BullMQ scheduler) - sin real-time/offline/PWA/pagos"
+}

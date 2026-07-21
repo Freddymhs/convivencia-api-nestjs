@@ -1,0 +1,11 @@
+{
+  "project": "convivencia-api",
+  "tech": "NestJS 11 + Fastify + Prisma 7 + PostgreSQL 16",
+  "current_phase": "FASE_0",
+  "phases": {
+    "FASE_0": { "status": "pending", "tasks": 0, "total": 5 },
+    "FASE_1": { "status": "pending", "tasks": 0, "total": 8 },
+    "FASE_2": { "status": "pending", "tasks": 0, "total": 6 },
+    "FASE_3": { "status": "pending", "tasks": 0, "total": 5 }
+  }
+}
